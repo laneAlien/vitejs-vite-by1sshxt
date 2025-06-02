@@ -1,0 +1,14 @@
+/* src/shared/ui/Input/Input.module.css */
+.inputContainer {
+  @apply flex items-center border rounded-tg transition-colors;
+  min-height: var(--tg-input-height);
+  box-shadow: 0 0 0 1px transparent;
+}
+
+.inputContainer:focus-within {
+  box-shadow: 0 0 0 2px var(--tg-theme-link-color);
+}
+
+.dark .inputContainer {
+  @apply bg-tg-theme-secondary-bg-color;
+}

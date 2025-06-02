@@ -1,0 +1,8 @@
+/* src/shared/ui/Tag/Tag.module.css */
+.tag {
+  @apply inline-flex items-center max-w-full;
+}
+
+.tag:hover .close-icon {
+  @apply opacity-100;
+}

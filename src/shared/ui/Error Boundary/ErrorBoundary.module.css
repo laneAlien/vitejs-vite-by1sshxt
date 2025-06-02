@@ -1,0 +1,71 @@
+/* src/shared/ui/ErrorBoundary/ErrorBoundary.module.css */
+.container {
+  --error-bg: var(--tg-theme-bg-color);
+  --error-text: var(--tg-theme-text-color);
+  --error-border: var(--tg-theme-secondary-bg-color);
+  
+  min-height: 100vh;
+  padding: 2rem;
+  background: var(--error-bg);
+  color: var(--error-text);
+  transition: background 0.3s ease;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.card {
+  background: var(--error-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.error {
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.details {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+
+.stack {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.loader {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Темные темы */
+.dark .card {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.light .card {
+  background: rgba(0, 0, 0, 0.05);
+}

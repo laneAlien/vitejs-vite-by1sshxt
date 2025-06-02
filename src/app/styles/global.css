@@ -1,0 +1,79 @@
+// src/app/styles/global.css
+
+@layer base {
+  :root {
+    /* Telegram Theme Variables */
+    --tg-theme-bg-color: #ffffff;
+    --tg-theme-text-color: #000000;
+    --tg-theme-hint-color: #707579;
+    --tg-theme-link-color: #3390ec;
+    --tg-theme-button-color: #3390ec;
+    --tg-theme-button-text-color: #ffffff;
+    --tg-theme-secondary-bg-color: #f4f4f5;
+    
+    /* Дополнительные кастомные переменные */
+    --tg-border-radius: 0.5rem;
+    --tg-transition-duration: 0.2s;
+    --tg-focus-ring-width: 2px;
+  }
+
+  .night {
+    --tg-theme-bg-color: #212121;
+    --tg-theme-text-color: #ffffff;
+    --tg-theme-hint-color: #aaaaaa;
+    --tg-theme-secondary-bg-color: #181818;
+  }
+
+  /* Сброс стилей и базовые настройки */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, system-ui, sans-serif;
+    line-height: 1.5;
+    background: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+    transition: 
+      background-color var(--tg-transition-duration) ease,
+      color var(--tg-transition-duration) ease;
+  }
+
+  /* Глобальные анимации */
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slide-up {
+    from { transform: translateY(20px); }
+    to { transform: translateY(0); }
+  }
+}
+
+@layer utilities {
+  .tg-focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-tg-link-color;
+  }
+
+  .tg-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--tg-theme-link-color) transparent;
+    
+    &::-webkit-scrollbar {
+      @apply w-2;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      @apply rounded-full bg-tg-link-color;
+    }
+  }
+}

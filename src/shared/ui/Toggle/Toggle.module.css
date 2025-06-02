@@ -1,0 +1,38 @@
+/* src/shared/ui/Toggle/Toggle.module.css */
+.toggleWrapper {
+  @apply inline-flex items-center focus:outline-none;
+}
+
+.toggleWrapper:focus-visible .track {
+  @apply ring-2 ring-tg-theme-link-color;
+}
+
+.track {
+  @apply relative flex items-center transition-colors;
+}
+
+.thumb {
+  @apply absolute top-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg 
+         flex items-center justify-center;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+}
+
+.icon {
+  @apply flex items-center justify-center;
+}
+
+.sm .thumb {
+  width: 13px;
+  height: 13px;
+}
+
+.md .thumb {
+  width: 16px;
+  height: 16px;
+}
+
+.lg .thumb {
+  width: 20px;
+  height: 20px;
+}

@@ -1,0 +1,33 @@
+/* src/shared/ui/Modal/Modal.module.css */
+.overlay {
+  @apply fixed inset-0 z-50 bg-black bg-opacity-50 backdrop-blur-sm;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.modal {
+  @apply relative rounded-tg bg-tg-theme-bg-color text-tg-theme-text-color 
+         shadow-xl w-full max-h-[90vh] overflow-y-auto tg-scrollbar;
+}
+
+.dark .modal {
+  @apply shadow-none ring-1 ring-tg-theme-hint-color/20;
+}
+
+.header {
+  @apply sticky top-0 z-10 bg-inherit flex items-center justify-between 
+         p-4 border-b border-tg-theme-secondary-bg-color;
+}
+
+.title {
+  @apply text-xl font-semibold;
+}
+
+.content {
+  @apply p-4;
+}
+
+.closeButton {
+  @apply ml-auto -mr-2;
+}

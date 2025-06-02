@@ -1,0 +1,41 @@
+/* src/shared/ui/Select/Select.module.css */
+.trigger {
+  @apply rounded-tg border transition-colors w-full;
+  min-height: var(--tg-input-height);
+}
+
+.trigger:focus {
+  @apply ring-2 ring-tg-theme-link-color outline-none;
+}
+
+.dropdown {
+  @apply absolute z-50 mt-1 w-full bg-tg-theme-bg-color 
+         border border-tg-theme-secondary-bg-color rounded-tg 
+         shadow-lg max-h-60 overflow-auto tg-scrollbar;
+}
+
+.night .dropdown {
+  @apply shadow-none ring-1 ring-tg-theme-hint-color/20;
+}
+
+.search {
+  @apply sticky top-0 p-2 border-b border-tg-theme-secondary-bg-color 
+         bg-inherit flex items-center gap-2;
+}
+
+.options {
+  @apply divide-y divide-tg-theme-secondary-bg-color;
+}
+
+.option {
+  @apply w-full px-4 py-2 text-left hover:bg-tg-theme-secondary-bg-color 
+         transition-colors flex items-center;
+}
+
+.selected {
+  @apply bg-tg-theme-link-color/10 text-tg-theme-link-color;
+}
+
+.empty {
+  @apply p-4 flex items-center gap-2 text-tg-theme-hint-color;
+}
