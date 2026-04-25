@@ -8,10 +8,9 @@ import { ThemeProvider } from '@/shared/ui/ThemeToggle/ThemeContext';
 import { TelemetryProvider } from '@/shared/lib/telemetry';
 import { ErrorBoundary } from '@/shared/ui/ErrorBoundary';
 import { Loader } from '@/shared/ui/Loader';
-import App from './App';
 import './index.css';
 
-// Lazy load App component for better code splitting
+// Lazy load App for code splitting — App itself no longer wraps a Router
 const LazyApp = React.lazy(() => import('./App'));
 
 // Telegram-like spring animation config
@@ -32,7 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             storageKey="library-theme"
             themes={['day', 'night', 'system']}
           >
-            <TelemetryProvider 
+            <TelemetryProvider
               enabled={import.meta.env.PROD}
               endpoint="/api/telemetry"
             >
@@ -40,8 +39,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                 transition={{
                   type: "spring",
                   ...tgAnimationConfig,
-                  staggerChildren: 0.1,
-                  when: "beforeChildren"
                 }}
               >
                 <LazyApp />
